@@ -1,11 +1,11 @@
-const { Schema } = require('mongoose');
+const mongoose = require('mongoose');
 const moment = require('moment');
 
-const ReactionSchema = new Schema(
+const ReactionSchema = new mongoose.Schema(
   {
     reactionId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Schema.Types.ObjectId(),
+      type: mongoose.Schema.Types.ObjectId,
+      default: () => new mongoose.Types.ObjectId(),
     },
     reactionBody: {
       type: String,
@@ -30,4 +30,4 @@ const ReactionSchema = new Schema(
   }
 );
 
-module.exports = ReactionSchema;
+module.exports = ReactionSchema; // Export the schema, not the model
